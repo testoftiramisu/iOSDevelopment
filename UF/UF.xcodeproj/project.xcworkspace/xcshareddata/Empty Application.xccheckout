@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>229D6573-CDB2-42AB-97E2-592E22B928D2</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Empty Application</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>1E4B0AD5-9C33-478E-ACCE-C34508B99858</key>
+		<string>https://github.com/testoftiramisu/iOSDevelopmentRecipes.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Swans/Empty Application.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>1E4B0AD5-9C33-478E-ACCE-C34508B99858</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/testoftiramisu/iOSDevelopmentRecipes.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>1E4B0AD5-9C33-478E-ACCE-C34508B99858</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1E4B0AD5-9C33-478E-ACCE-C34508B99858</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iOSDevelopmentRecipes</string>
+		</dict>
+	</array>
+</dict>
+</plist>
