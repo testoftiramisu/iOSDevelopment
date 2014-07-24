@@ -5,36 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>8EE3FB22-7381-4AAE-A714-59B6D5834FB6</string>
+	<string>C3D7550F-1FDF-4218-9EBB-26D118D8F81E</string>
 	<key>IDESourceControlProjectName</key>
 	<string>UF</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>1E4B0AD5-9C33-478E-ACCE-C34508B99858</key>
-		<string>https://github.com/testoftiramisu/iOSDevelopmentRecipes.git</string>
+		<key>66B68A3E-4592-435A-8EDB-6253B4963A41</key>
+		<string>https://github.com/testoftiramisu/iOSDevelopment.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>UF/UF.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>1E4B0AD5-9C33-478E-ACCE-C34508B99858</key>
+		<key>66B68A3E-4592-435A-8EDB-6253B4963A41</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/testoftiramisu/iOSDevelopmentRecipes.git</string>
+	<string>https://github.com/testoftiramisu/iOSDevelopment.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>1E4B0AD5-9C33-478E-ACCE-C34508B99858</string>
+	<string>66B68A3E-4592-435A-8EDB-6253B4963A41</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>1E4B0AD5-9C33-478E-ACCE-C34508B99858</string>
+			<string>66B68A3E-4592-435A-8EDB-6253B4963A41</string>
 			<key>IDESourceControlWCCName</key>
-			<string>iOSDevelopmentRecipes</string>
+			<string>iOSDevelopment</string>
 		</dict>
 	</array>
 </dict>
