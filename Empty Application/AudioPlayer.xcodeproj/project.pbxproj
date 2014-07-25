@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		045D921D197EADE5000C71A8 /* 1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 045D921B197EADE5000C71A8 /* 1.mp3 */; };
 		045D921E197EADE5000C71A8 /* 2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 045D921C197EADE5000C71A8 /* 2.mp3 */; };
+		04A9B30619829A2300552CBF /* SF.png in Resources */ = {isa = PBXBuildFile; fileRef = 04A9B30519829A2300552CBF /* SF.png */; };
 		04C2F91A197D4F3400D4155C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04C2F919197D4F3400D4155C /* Foundation.framework */; };
 		04C2F91C197D4F3400D4155C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04C2F91B197D4F3400D4155C /* CoreGraphics.framework */; };
 		04C2F91E197D4F3400D4155C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04C2F91D197D4F3400D4155C /* UIKit.framework */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		045D921B197EADE5000C71A8 /* 1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1.mp3; sourceTree = "<group>"; };
 		045D921C197EADE5000C71A8 /* 2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 2.mp3; sourceTree = "<group>"; };
+		04A9B30519829A2300552CBF /* SF.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SF.png; sourceTree = "<group>"; };
 		04C2F916197D4F3400D4155C /* AudioPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04C2F919197D4F3400D4155C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		04C2F91B197D4F3400D4155C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -147,6 +149,7 @@
 		04C2F920197D4F3400D4155C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				04A9B30519829A2300552CBF /* SF.png */,
 				04C2F956197D80D100D4155C /* 3.mp3 */,
 				045D921B197EADE5000C71A8 /* 1.mp3 */,
 				045D921C197EADE5000C71A8 /* 2.mp3 */,
@@ -224,6 +227,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Denys Khlivnyy";
 				TargetAttributes = {
+					04C2F915197D4F3400D4155C = {
+						DevelopmentTeam = 96KHWMMBV3;
+					};
 					04C2F930197D4F3400D4155C = {
 						TestTargetID = 04C2F915197D4F3400D4155C;
 					};
@@ -258,6 +264,7 @@
 				04C2F94C197D4F9200D4155C /* ViewController.xib in Resources */,
 				045D921E197EADE5000C71A8 /* 2.mp3 in Resources */,
 				04C2F92C197D4F3400D4155C /* Images.xcassets in Resources */,
+				04A9B30619829A2300552CBF /* SF.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,10 +404,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Empty Application/AudioPlayer-Prefix.pch";
 				INFOPLIST_FILE = "Empty Application/AudioPlayer-Info.plist";
 				PRODUCT_NAME = AudioPlayer;
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -410,10 +420,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Empty Application/AudioPlayer-Prefix.pch";
 				INFOPLIST_FILE = "Empty Application/AudioPlayer-Info.plist";
 				PRODUCT_NAME = AudioPlayer;
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

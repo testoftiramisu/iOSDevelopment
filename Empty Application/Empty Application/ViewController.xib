@@ -8,6 +8,7 @@
             <connections>
                 <outlet property="currentTimeSlider" destination="bwP-xv-7h2" id="TFh-HY-53G"/>
                 <outlet property="duration" destination="853-Mw-c2I" id="RUu-RU-AXh"/>
+                <outlet property="imgBg" destination="Ays-9t-sPf" id="Afg-OS-ORA"/>
                 <outlet property="playButton" destination="eN2-8c-DIf" id="g7q-p9-v78"/>
                 <outlet property="songName" destination="d0i-6U-gnA" id="uKG-ZF-nQa"/>
                 <outlet property="tableView" destination="pGf-rO-HTj" id="8Xh-QL-uES"/>
@@ -20,6 +21,10 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SF.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ays-9t-sPf">
+                    <rect key="frame" x="-40" y="-40" width="360" height="620"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eN2-8c-DIf" userLabel="PlayButton">
                     <rect key="frame" x="117" y="411" width="86" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -56,10 +61,9 @@
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" indicatorStyle="black" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="pGf-rO-HTj">
+                <tableView clipsSubviews="YES" alpha="0.39999999999999963" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" indicatorStyle="black" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="pGf-rO-HTj">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="220"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <color key="sectionIndexColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -78,4 +82,7 @@
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
+    <resources>
+        <image name="SF.png" width="577" height="893"/>
+    </resources>
 </document>

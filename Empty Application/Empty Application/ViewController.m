@@ -28,13 +28,13 @@
     [self.playButton setTitle:@"Listen" forState:UIControlStateNormal];
     
     self.audioPlayer = [[DKAudioPlayer alloc] init];
-    
     self.songsList = [[NSMutableArray alloc] init];
     
     // Table
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
+    // Array with all mp3 files in Apllication Bundle
     NSArray *pathArray = [[NSBundle mainBundle] pathsForResourcesOfType:@".mp3" inDirectory:@"."];
     
     for (NSString *path in pathArray) {
@@ -45,6 +45,22 @@
     [self.tableView reloadData];
     NSURL *song = [self.songsList objectAtIndex:0];
     [self setupAudioPlayer:song];
+    
+    // Let's add the some Paralax motion effect for a background
+    CGFloat leftRightMin = -55.0f;
+    CGFloat leftRightMax = 55.0f;
+    
+    UIInterpolatingMotionEffect *leftRight = [[UIInterpolatingMotionEffect alloc]
+                                              initWithKeyPath:@"center.x"
+                                              type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
+    leftRight.minimumRelativeValue = @(leftRightMin);
+    leftRight.maximumRelativeValue = @(leftRightMax);
+    
+    UIMotionEffectGroup *meGroup = [[UIMotionEffectGroup alloc] init];
+    meGroup.motionEffects = @[leftRight];
+    
+    [self.imgBg addMotionEffect:meGroup];
+    
 }
 
 //init the Player to get file properties to set the time labels
@@ -52,11 +68,9 @@
     
     [self.audioPlayer initPlayer:song];
     AVPlayerItem *currentItem = [AVPlayerItem playerItemWithURL:song];
-    
     [self.audioPlayer.Player replaceCurrentItemWithPlayerItem:currentItem];
     
     self.currentTimeSlider.maximumValue = [self.audioPlayer getAudioDuration];
-    
     self.timeElapsed.text = @"0:00";
     self.duration.text = [NSString stringWithFormat:@"-%@",
                           [self.audioPlayer timeFormat:[self.audioPlayer getAudioDuration]]];
@@ -93,7 +107,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    //[self.audioPlayer pauseAudio];
+    self.isPaused = NO;
     NSURL *song = [self.songsList objectAtIndex:indexPath.row];
     [self setupAudioPlayer:song];
     [self playAudio];
@@ -113,12 +127,12 @@
                                                     userInfo:nil
                                                      repeats:YES];
         [self.audioPlayer playAudio];
-        self.isPaused = TRUE;
+        self.isPaused = YES;
     } else {
         // [self.playButton setBackgroundImage:nil forState:UIControlStateNormal];
         [self.playButton setTitle:@"Listen" forState:UIControlStateNormal];
         [self.audioPlayer pauseAudio];
-        self.isPaused = FALSE;
+        self.isPaused = NO;
     }
 
 }
@@ -129,7 +143,7 @@
 
 - (IBAction)setCurrentTime:(id)scrubber {
     //if scrubbing update the timestate, call updateTime faster not to wait a second and dont repeat it
-    [NSTimer scheduledTimerWithTimeInterval:0.01
+    [NSTimer scheduledTimerWithTimeInterval:0.001
                                      target:self
                                    selector:@selector(updateTime:)
                                    userInfo:nil
