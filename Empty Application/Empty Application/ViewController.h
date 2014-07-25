@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 #import "DKAudioPlayer.h"
+#import "ErrorHandler.h"
 
 @interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
@@ -30,5 +31,7 @@
 - (IBAction)playAudioPressed:(id)sender;
 - (IBAction)setCurrentTime:(id)sender;
 - (IBAction)userIsScrubbing:(id)sender;
+- (IBAction)fakeFatalError:(id)sender;
+- (IBAction)fakeNonFatalError:(id)sender;
 
 @end

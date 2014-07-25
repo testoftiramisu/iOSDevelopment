@@ -156,6 +156,15 @@
     self.scrubbing = TRUE;
 }
 
+- (IBAction)fakeFatalError:(id)sender {
+}
+
+- (IBAction)fakeNonFatalError:(id)sender {
+}
+
+- (IBAction)fakeFatalError:(id)sender {
+}
+
 - (void)updateTime:(NSTimer *)timer {
     if (!self.scrubbing) {
         self.currentTimeSlider.value = [self.audioPlayer getCurrentAudioTime];
