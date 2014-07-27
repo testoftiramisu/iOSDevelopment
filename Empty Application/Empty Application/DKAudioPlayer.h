@@ -13,7 +13,7 @@
 
 @property (nonatomic, retain) AVPlayer *Player;
 
-- (void)initPlayer:(NSURL *)audioFile;
+- (void)initPlayer;
 - (void)playAudio;
 - (void)pauseAudio;
 - (void)setCurrentAudioTime:(float)value;

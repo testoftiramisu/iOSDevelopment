@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import <MediaPlayer/MediaPlayer.h>
 
 @interface ViewController ()
 
@@ -26,24 +27,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self.playButton setTitle:@"Listen" forState:UIControlStateNormal];
-    
     self.audioPlayer = [[DKAudioPlayer alloc] init];
-    self.songsList = [[NSMutableArray alloc] init];
+    
+    MPMediaQuery *everything = [[MPMediaQuery alloc] init];
+    NSArray *itemsFromGenericQuery = [everything items];
+    self.songsList = [NSMutableArray arrayWithArray:itemsFromGenericQuery];
     
     // Table
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
-    // Array with all mp3 files in Apllication Bundle
-    NSArray *pathArray = [[NSBundle mainBundle] pathsForResourcesOfType:@".mp3" inDirectory:@"."];
-    
-    for (NSString *path in pathArray) {
-        NSURL *songURL = [NSURL fileURLWithPath:path];
-        [self.songsList addObject: songURL];
-    }
-    
     [self.tableView reloadData];
-    NSURL *song = [self.songsList objectAtIndex:0];
+    MPMediaItem *song = [self.songsList objectAtIndex:0];
     [self setupAudioPlayer:song];
     
     // Let's add the some Paralax motion effect for a background
@@ -58,16 +53,15 @@
     
     UIMotionEffectGroup *meGroup = [[UIMotionEffectGroup alloc] init];
     meGroup.motionEffects = @[leftRight];
-    
     [self.imgBg addMotionEffect:meGroup];
     
 }
 
 //init the Player to get file properties to set the time labels
-- (void)setupAudioPlayer:(NSURL *)song {
+- (void)setupAudioPlayer:(MPMediaItem *)song {
+    [self.audioPlayer initPlayer];
     
-    [self.audioPlayer initPlayer:song];
-    AVPlayerItem *currentItem = [AVPlayerItem playerItemWithURL:song];
+    AVPlayerItem *currentItem = [AVPlayerItem playerItemWithURL:[song valueForProperty:MPMediaItemPropertyAssetURL]];
     [self.audioPlayer.Player replaceCurrentItemWithPlayerItem:currentItem];
     
     self.currentTimeSlider.maximumValue = [self.audioPlayer getAudioDuration];
@@ -75,8 +69,10 @@
     self.duration.text = [NSString stringWithFormat:@"-%@",
                           [self.audioPlayer timeFormat:[self.audioPlayer getAudioDuration]]];
     
-    NSString *songTitle = [song lastPathComponent];
-    self.songName.text = songTitle;
+    NSString *songTitle = [song valueForProperty: MPMediaItemPropertyTitle];
+    NSString *artist = [song valueForProperty:MPMediaItemPropertyArtist];
+    NSString *text = [NSString stringWithFormat:@"%@ - %@", artist, songTitle];
+    self.songName.text = text;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -99,17 +95,20 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
     }
     
-    NSURL *song = [self.songsList objectAtIndex:indexPath.row];
-    NSString *songTitle = [song lastPathComponent];
-    cell.textLabel.text = songTitle;
+    MPMediaItem *song = [self.songsList objectAtIndex:indexPath.row];
+    NSString *songTitle = [song valueForProperty: MPMediaItemPropertyTitle];
+    NSString *artist = [song valueForProperty:MPMediaItemPropertyArtist];
+    NSString *text = [NSString stringWithFormat:@"%@ - %@", artist, songTitle];
+    cell.textLabel.text = text;
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     self.isPaused = NO;
-    NSURL *song = [self.songsList objectAtIndex:indexPath.row];
-    [self setupAudioPlayer:song];
+   
+    MPMediaItem *currentSong = [self.songsList objectAtIndex:indexPath.row];
+    [self setupAudioPlayer:currentSong];
     [self playAudio];
     
 }

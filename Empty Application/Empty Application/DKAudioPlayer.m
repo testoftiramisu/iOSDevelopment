@@ -10,10 +10,9 @@
 
 @implementation DKAudioPlayer
 
-// Init Player with Filename
-- (void)initPlayer:(NSURL *)audioFile {
-
-    self.Player = [[AVPlayer alloc] initWithURL:audioFile];
+- (void) initPlayer
+{
+    self.Player = [[AVPlayer alloc] init];
 }
 
 - (void)playAudio
