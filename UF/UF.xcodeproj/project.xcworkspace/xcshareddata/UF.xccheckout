@@ -5,19 +5,16 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>B7CDE1D5-52F3-4AD1-BF74-4698F04F3022</string>
 	<key>IDESourceControlProjectName</key>
 	<string>UF</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>D45585EA-AFA7-4FA3-A5B1-C33139087F50</key>
 		<string>https://github.com/testoftiramisu/iOSDevelopment.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>UF/UF.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>D45585EA-AFA7-4FA3-A5B1-C33139087F50</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +22,12 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>D45585EA-AFA7-4FA3-A5B1-C33139087F50</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>D45585EA-AFA7-4FA3-A5B1-C33139087F50</string>
 			<key>IDESourceControlWCCName</key>
 			<string>iOSDevelopment</string>
 		</dict>

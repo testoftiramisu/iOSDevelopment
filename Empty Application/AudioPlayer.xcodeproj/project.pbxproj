@@ -5,8 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
-/* Begin PBXBuildFile section */
 		04A9B30619829A2300552CBF /* SF.png in Resources */ = {isa = PBXBuildFile; fileRef = 04A9B30519829A2300552CBF /* SF.png */; };
 		04C2F91A197D4F3400D4155C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04C2F919197D4F3400D4155C /* Foundation.framework */; };
 		04C2F91C197D4F3400D4155C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04C2F91B197D4F3400D4155C /* CoreGraphics.framework */; };
@@ -25,7 +23,6 @@
 		04C2F94E197D58E700D4155C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04C2F94D197D58E700D4155C /* CoreData.framework */; };
 		04C2F951197D5D7A00D4155C /* ErrorHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C2F950197D5D7A00D4155C /* ErrorHandler.m */; };
 		04C2F95E197D85CD00D4155C /* DKAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C2F95D197D85CD00D4155C /* DKAudioPlayer.m */; };
-/* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		04C2F936197D4F3400D4155C /* PBXContainerItemProxy */ = {
@@ -36,8 +33,6 @@
 			remoteInfo = "Empty Application";
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXFileReference section */
 		04A9B30519829A2300552CBF /* SF.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SF.png; sourceTree = "<group>"; };
 		04C2F916197D4F3400D4155C /* AudioPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04C2F919197D4F3400D4155C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -63,7 +58,6 @@
 		04C2F950197D5D7A00D4155C /* ErrorHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorHandler.m; sourceTree = "<group>"; };
 		04C2F95C197D85CD00D4155C /* DKAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKAudioPlayer.h; sourceTree = "<group>"; };
 		04C2F95D197D85CD00D4155C /* DKAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKAudioPlayer.m; sourceTree = "<group>"; };
-/* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		04C2F913197D4F3400D4155C /* Frameworks */ = {
@@ -249,8 +243,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04C2F924197D4F3400D4155C /* InfoPlist.strings in Resources */,
-				04C2F94C197D4F9200D4155C /* ViewController.xib in Resources */,
 				04C2F92C197D4F3400D4155C /* Images.xcassets in Resources */,
 				04A9B30619829A2300552CBF /* SF.png in Resources */,
 			);
