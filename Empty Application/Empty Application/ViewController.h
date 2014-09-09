@@ -31,6 +31,8 @@
 - (IBAction)playAudioPressed:(id)sender;
 - (IBAction)setCurrentTime:(id)sender;
 - (IBAction)userIsScrubbing:(id)sender;
+
+// Error handling
 - (IBAction)fakeFatalError:(id)sender;
 - (IBAction)fakeNonFatalError:(id)sender;
 

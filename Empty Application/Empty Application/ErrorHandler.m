@@ -12,7 +12,20 @@
 
 + (void)handleError:(NSError *)error fatal:(BOOL)fatalError
 {
-    // TODO: Handle the error
+    NSString *localizedCancelTitle = NSLocalizedString(@"Dismiss", nil);
+    
+    if (fatalError) {
+        localizedCancelTitle = NSLocalizedString(@"Shut Down", nil);
+    }
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[error localizedDescription]
+                                                    message:[error localizedFailureReason]
+                                                   delegate:nil
+                                          cancelButtonTitle:localizedCancelTitle
+                                          otherButtonTitles:nil];
+    [alert show];
+    // Log to standart out
+    NSLog(@"Unhandled error:\n%@, %@", error, [error userInfo]);
 }
 
 @end

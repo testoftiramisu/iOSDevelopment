@@ -156,9 +156,50 @@
 }
 
 - (IBAction)fakeNonFatalError:(id)sender {
+    NSString *description = @"Connection error";
+    NSString *failureReason = @"Can't seem to get a connection";
+    NSArray *recoveryOption =@[@"Retry"];
+    NSString *recoverySuggestion = @"Check your wi-fi settings and retry.";
+    
+    NSDictionary *userInfo =
+    [NSDictionary dictionaryWithObjects:@[description,
+                                          failureReason,
+                                          recoveryOption,
+                                          recoverySuggestion,
+                                          self]
+                                forKeys:@[NSLocalizedDescriptionKey,
+                                          NSLocalizedFailureReasonErrorKey,
+                                          NSLocalizedRecoveryOptionsErrorKey,
+                                          NSLocalizedRecoverySuggestionErrorKey,
+                                          NSRecoveryAttempterErrorKey]];
+    
+    NSError *error = [[NSError alloc] initWithDomain:@"NSCookbook.iOS7recipes"
+                                                code:42
+                                            userInfo:userInfo];
+    
+    [ErrorHandler handleError:error fatal:NO];
+    
 }
 
 - (IBAction)fakeFatalError:(id)sender {
+    NSString *description = @"Data error";
+    NSString *failureReason = @"Data is corrupt. The app must shut down.";
+    NSString *recoverySuggestion = @"Contact support!.";
+    
+    NSDictionary *userInfo =
+    [NSDictionary dictionaryWithObjects:@[description,
+                                          failureReason,
+                                          recoverySuggestion]
+                                forKeys:@[NSLocalizedDescriptionKey,
+                                          NSLocalizedFailureReasonErrorKey,
+                                          NSLocalizedRecoverySuggestionErrorKey]];
+    
+    NSError *error = [[NSError alloc] initWithDomain:@"NSCookbook.iOS7recipes"
+                                                code:42
+                                            userInfo:userInfo];
+    
+    [ErrorHandler handleError:error fatal:YES];
+
 }
 
 - (void)updateTime:(NSTimer *)timer {
@@ -171,6 +212,11 @@
     
     self.duration.text = [NSString stringWithFormat:@"-%@",
                           [self.audioPlayer timeFormat:[self.audioPlayer getAudioDuration] - [self.audioPlayer getCurrentAudioTime]]];
+}
+
+- (BOOL)attemptRecoveryFromError:(NSError *)error optionIndex:(NSUInteger)recoveryOptionIndex
+{
+    return NO;
 }
 
 - (void)didReceiveMemoryWarning {
