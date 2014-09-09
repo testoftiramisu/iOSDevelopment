@@ -32,7 +32,7 @@
 			containerPortal = 04C2F90E197D4F3300D4155C /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 04C2F915197D4F3400D4155C;
-			remoteInfo = "Empty Application";
+			remoteInfo = "AudioPlayer";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -51,7 +51,7 @@
 		04C2F92B197D4F3400D4155C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		04C2F931197D4F3400D4155C /* AudioPlayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AudioPlayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04C2F932197D4F3400D4155C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		04C2F93A197D4F3400D4155C /* Empty ApplicationTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Empty ApplicationTests-Info.plist"; sourceTree = "<group>"; };
+		04C2F93A197D4F3400D4155C /* AudioPlayerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AudioPlayerTests-Info.plist"; sourceTree = "<group>"; };
 		04C2F93C197D4F3400D4155C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		04C2F93E197D4F3400D4155C /* AudioPlayerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioPlayerTests.m; sourceTree = "<group>"; };
 		04C2F948197D4F9200D4155C /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -135,8 +135,7 @@
 				04C2F94F197D5D7A00D4155C /* ErrorHandler.h */,
 				04C2F920197D4F3400D4155C /* Supporting Files */,
 			);
-			name = AudioPlayer;
-			path = "Empty Application";
+			path = AudioPlayer;
 			sourceTree = "<group>";
 		};
 		04C2F920197D4F3400D4155C /* Supporting Files */ = {
@@ -157,14 +156,13 @@
 				04C2F93E197D4F3400D4155C /* AudioPlayerTests.m */,
 				04C2F939197D4F3400D4155C /* Supporting Files */,
 			);
-			name = AudioPlayerTests;
-			path = "Empty ApplicationTests";
+			path = AudioPlayerTests;
 			sourceTree = "<group>";
 		};
 		04C2F939197D4F3400D4155C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				04C2F93A197D4F3400D4155C /* Empty ApplicationTests-Info.plist */,
+				04C2F93A197D4F3400D4155C /* AudioPlayerTests-Info.plist */,
 				04C2F93B197D4F3400D4155C /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -186,7 +184,7 @@
 			dependencies = (
 			);
 			name = AudioPlayer;
-			productName = "Empty Application";
+			productName = "AudioPlayer";
 			productReference = 04C2F916197D4F3400D4155C /* AudioPlayer.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -204,7 +202,7 @@
 				04C2F937197D4F3400D4155C /* PBXTargetDependency */,
 			);
 			name = AudioPlayerTests;
-			productName = "Empty ApplicationTests";
+			productName = "AudioPlayerTests";
 			productReference = 04C2F931197D4F3400D4155C /* AudioPlayerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
@@ -393,8 +391,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Empty Application/AudioPlayer-Prefix.pch";
-				INFOPLIST_FILE = "Empty Application/AudioPlayer-Info.plist";
+				GCC_PREFIX_HEADER = "AudioPlayer/AudioPlayer-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/AudioPlayer/AudioPlayer-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = AudioPlayer;
 				PROVISIONING_PROFILE = "";
@@ -411,8 +409,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Empty Application/AudioPlayer-Prefix.pch";
-				INFOPLIST_FILE = "Empty Application/AudioPlayer-Info.plist";
+				GCC_PREFIX_HEADER = "AudioPlayer/AudioPlayer-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/AudioPlayer/AudioPlayer-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = AudioPlayer;
 				PROVISIONING_PROFILE = "";
@@ -424,19 +422,19 @@
 		04C2F946197D4F3400D4155C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Empty Application.app/Empty Application";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AudioPlayer.app/AudioPlayer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Empty Application/Empty Application-Prefix.pch";
+				GCC_PREFIX_HEADER = "AudioPlayer/AudioPlayer-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "Empty ApplicationTests/Empty ApplicationTests-Info.plist";
+				INFOPLIST_FILE = "AudioPlayerTests/AudioPlayerTests-Info.plist";
 				PRODUCT_NAME = AudioPlayerTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -446,15 +444,15 @@
 		04C2F947197D4F3400D4155C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Empty Application.app/Empty Application";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AudioPlayer.app/AudioPlayer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Empty Application/Empty Application-Prefix.pch";
-				INFOPLIST_FILE = "Empty ApplicationTests/Empty ApplicationTests-Info.plist";
+				GCC_PREFIX_HEADER = "AudioPlayer/AudioPlayer-Prefix.pch";
+				INFOPLIST_FILE = "AudioPlayerTests/AudioPlayerTests-Info.plist";
 				PRODUCT_NAME = AudioPlayerTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
