@@ -17,6 +17,7 @@
     // Override point for customization after application launch.
     self.viewController = [[ViewController alloc] initWithNibName:@"ViewController"
                                                            bundle:nil];
+    
     [application setStatusBarHidden:YES]; // Lets hide a status bar
     
     self.window.rootViewController = self.viewController;

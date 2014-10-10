@@ -10,9 +10,29 @@
 
 @implementation DKAudioPlayer
 
-- (void) initPlayer
+- (void) initMediaPlayer
 {
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord
+                                     withOptions:AVAudioSessionCategoryOptionDefaultToSpeaker
+                                           error:nil];
     self.Player = [[AVPlayer alloc] init];
+}
+
+// Init Player with Filename
+- (void)initPlayer:(NSString *)audioFile fileExtension:(NSString *)fileExtension
+{
+    NSURL *audioFileLocation = [[NSBundle mainBundle] URLForResource:audioFile
+                                                       withExtension:fileExtension];
+    self.Player = [[AVPlayer alloc] initWithURL:audioFileLocation];
+}
+
+- (BOOL)isHeadsetPluggedIn {
+    AVAudioSessionRouteDescription* route = [[AVAudioSession sharedInstance] currentRoute];
+    for (AVAudioSessionPortDescription* desc in [route outputs]) {
+        if ([[desc portType] isEqualToString:AVAudioSessionPortHeadphones])
+            return YES;
+    }
+    return NO;
 }
 
 - (void)playAudio

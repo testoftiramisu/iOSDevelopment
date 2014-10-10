@@ -10,6 +10,28 @@
 
 @implementation ErrorHandler
 
+static NSMutableArray *retainedDelegates;
+
+- (id)initWithError:(NSError *)error fatal:(BOOL)fatalError
+{
+    self = [super init];
+    if (self) {
+        self.error = error;
+        self.fatalError = fatalError;
+    }
+    return self;
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (self.fatalError) {
+        // In case of fatal error abort execution
+        abort();
+    }
+    // Job is finished
+    [retainedDelegates removeObject:self];
+}
+
 + (void)handleError:(NSError *)error fatal:(BOOL)fatalError
 {
     NSString *localizedCancelTitle = NSLocalizedString(@"Dismiss", nil);
@@ -18,9 +40,18 @@
         localizedCancelTitle = NSLocalizedString(@"Shut Down", nil);
     }
     
+    // Notify the user
+    ErrorHandler *delegate = [[ErrorHandler alloc] initWithError:error fatal:fatalError];
+    if (!retainedDelegates) {
+        retainedDelegates = [[NSMutableArray alloc] init];
+    }
+    
+    [retainedDelegates addObject:delegate];
+
+    
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[error localizedDescription]
                                                     message:[error localizedFailureReason]
-                                                   delegate:nil
+                                                   delegate:delegate
                                           cancelButtonTitle:localizedCancelTitle
                                           otherButtonTitles:nil];
     [alert show];

@@ -9,8 +9,12 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ErrorHandler : NSObject
+@interface ErrorHandler : NSObject <UIAlertViewDelegate>
 
+@property (strong, nonatomic)NSError *error;
+@property (nonatomic)BOOL fatalError;
+
+- (id)initWithError:(NSError *)error fatal:(BOOL)fatalError;
 + (void)handleError:(NSError *) error fatal:(BOOL)fatalError;
 
 @end

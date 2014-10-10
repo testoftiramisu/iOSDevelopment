@@ -10,10 +10,10 @@
 @implementation DKAudioPlayer
 
 // Init Player with Filename
-- (void)initPlayer:(NSString *)audioFile fileExtension:(NSString *)fileEctension
+- (void)initPlayer:(NSString *)audioFile fileExtension:(NSString *)fileExtension
 {
     NSURL *audioFileLocation = [[NSBundle mainBundle] URLForResource:audioFile
-                                                       withExtension:fileEctension];
+                                                       withExtension:fileExtension];
     NSError *error;
     self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:audioFileLocation
                                                               error:&error];

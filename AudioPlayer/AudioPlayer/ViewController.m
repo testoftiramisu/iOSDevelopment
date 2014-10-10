@@ -25,21 +25,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view from its nib.
     [self.playButton setTitle:@"Listen" forState:UIControlStateNormal];
+    
     self.audioPlayer = [[DKAudioPlayer alloc] init];
     
-    MPMediaQuery *everything = [[MPMediaQuery alloc] init];
-    NSArray *itemsFromGenericQuery = [everything items];
-    self.songsList = [NSMutableArray arrayWithArray:itemsFromGenericQuery];
+#ifdef __i386__
+    NSLog(@"Running in the simulator");
+    [self setupPlayerWithAudioFile];
     
-    // Table
-    self.tableView.dataSource = self;
-    self.tableView.delegate = self;
-    
-    [self.tableView reloadData];
-    MPMediaItem *song = [self.songsList objectAtIndex:0];
-    [self setupAudioPlayer:song];
+#else
+    NSLog(@"Running on a device");
+    [self setupPlayerWithMediaLibrary];
+#endif
     
     // Let's add the some Paralax motion effect for a background
     CGFloat leftRightMin = -55.0f;
@@ -57,9 +56,37 @@
     
 }
 
-//init the Player to get file properties to set the time labels
-- (void)setupAudioPlayer:(MPMediaItem *)song {
-    [self.audioPlayer initPlayer];
+- (void)setupPlayerWithMediaLibrary
+{
+    MPMediaQuery *everything = [[MPMediaQuery alloc] init];
+    NSArray *itemsFromGenericQuery = [everything items];
+    self.songsList = [NSMutableArray arrayWithArray:itemsFromGenericQuery];
+    
+    // Table
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    
+    [self.tableView reloadData];
+    MPMediaItem *song = [self.songsList objectAtIndex:0];
+    [self setupMediaAudioPlayer:song];
+}
+
+- (void)setupPlayerWithAudioFile
+{
+    NSString *filename = @"Alpha";
+    NSString *fileExtension = @"mp3";
+    
+    [self.audioPlayer initPlayer:filename fileExtension:fileExtension];
+    self.currentTimeSlider.maximumValue = [self.audioPlayer getAudioDuration];
+    
+    self.timeElapsed.text = @"0:00";
+    self.duration.text = [NSString stringWithFormat:@"-%@",
+                          [self.audioPlayer timeFormat:[self.audioPlayer getAudioDuration]]];
+}
+
+// init the Player to get file properties to set the time labels
+- (void)setupMediaAudioPlayer:(MPMediaItem *)song {
+    [self.audioPlayer initMediaPlayer];
     
     AVPlayerItem *currentItem = [AVPlayerItem playerItemWithURL:[song valueForProperty:MPMediaItemPropertyAssetURL]];
     [self.audioPlayer.Player replaceCurrentItemWithPlayerItem:currentItem];
@@ -106,9 +133,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     self.isPaused = NO;
-   
+    
     MPMediaItem *currentSong = [self.songsList objectAtIndex:indexPath.row];
-    [self setupAudioPlayer:currentSong];
+    [self setupMediaAudioPlayer:currentSong];
     [self playAudio];
     
 }

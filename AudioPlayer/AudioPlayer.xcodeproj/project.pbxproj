@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		045790D719E438A600E51623 /* Alpha.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 045790D619E438A600E51623 /* Alpha.mp3 */; };
 		04A9B30619829A2300552CBF /* SF.png in Resources */ = {isa = PBXBuildFile; fileRef = 04A9B30519829A2300552CBF /* SF.png */; };
 		04C2F91A197D4F3400D4155C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04C2F919197D4F3400D4155C /* Foundation.framework */; };
 		04C2F91C197D4F3400D4155C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04C2F91B197D4F3400D4155C /* CoreGraphics.framework */; };
@@ -32,11 +33,12 @@
 			containerPortal = 04C2F90E197D4F3300D4155C /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 04C2F915197D4F3400D4155C;
-			remoteInfo = "AudioPlayer";
+			remoteInfo = AudioPlayer;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		045790D619E438A600E51623 /* Alpha.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Alpha.mp3; sourceTree = "<group>"; };
 		04A9B30519829A2300552CBF /* SF.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SF.png; sourceTree = "<group>"; };
 		04C2F916197D4F3400D4155C /* AudioPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04C2F919197D4F3400D4155C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -141,6 +143,7 @@
 		04C2F920197D4F3400D4155C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				045790D619E438A600E51623 /* Alpha.mp3 */,
 				04A9B30519829A2300552CBF /* SF.png */,
 				04C2F921197D4F3400D4155C /* AudioPlayer-Info.plist */,
 				04C2F922197D4F3400D4155C /* InfoPlist.strings */,
@@ -184,7 +187,7 @@
 			dependencies = (
 			);
 			name = AudioPlayer;
-			productName = "AudioPlayer";
+			productName = AudioPlayer;
 			productReference = 04C2F916197D4F3400D4155C /* AudioPlayer.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -202,7 +205,7 @@
 				04C2F937197D4F3400D4155C /* PBXTargetDependency */,
 			);
 			name = AudioPlayerTests;
-			productName = "AudioPlayerTests";
+			productName = AudioPlayerTests;
 			productReference = 04C2F931197D4F3400D4155C /* AudioPlayerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
@@ -216,7 +219,7 @@
 				ORGANIZATIONNAME = "Denys Khlivnyy";
 				TargetAttributes = {
 					04C2F915197D4F3400D4155C = {
-						DevelopmentTeam = 6538694R26;
+						DevelopmentTeam = 96KHWMMBV3;
 					};
 					04C2F930197D4F3400D4155C = {
 						TestTargetID = 04C2F915197D4F3400D4155C;
@@ -247,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04C2F92C197D4F3400D4155C /* Images.xcassets in Resources */,
+				045790D719E438A600E51623 /* Alpha.mp3 in Resources */,
 				A2DA6C1C1985185B00211C29 /* ViewController.xib in Resources */,
 				04A9B30619829A2300552CBF /* SF.png in Resources */,
 			);
